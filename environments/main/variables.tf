@@ -25,8 +25,8 @@ variable "key_name" {
 }
 
 variable "availability_zones" {
-  type    = list(string)
-#  default = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
+  description = "List of AZs to pick from"
+  type        = list(string)
 }
 
 variable "s3_bucket_name" {
@@ -38,6 +38,3 @@ variable "iam_user_name" {
   description = "Name of the IAM user"
   type        = string
 }
-
-
-
