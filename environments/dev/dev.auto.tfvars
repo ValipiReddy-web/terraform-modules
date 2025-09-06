@@ -5,4 +5,5 @@ subnet_id      = "subnet-0ee7adad63883df6d"
 key_name       = "aug2025key"
 s3_bucket_name = "sainath-demo-bucket-2025"
 iam_user_name  = "sainath-demo-user"
+availability_zone = "ap-south-1a"
 
