@@ -23,6 +23,11 @@ variable "key_name" {
   description = "Key pair name for EC2"
   type        = string
 }
+# environments/dev/variables.tf
+variable "availability_zones" {
+  type    = list(string)
+  default = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
+}
 
 variable "s3_bucket_name" {
   description = "Name of the S3 bucket"
