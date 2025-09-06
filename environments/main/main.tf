@@ -27,7 +27,7 @@ module "ec2_instance" {
   instance_type = var.instance_type
   subnet_id     = var.subnet_id
   key_name      = var.key_name
-  availability_zones = var.availability_zones   # pass the list to module
+#  availability_zones = var.availability_zones   # pass the list to module
 }
 
 # S3 Module
