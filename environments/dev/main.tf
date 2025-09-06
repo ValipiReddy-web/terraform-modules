@@ -14,7 +14,7 @@ terraform {
 # AWS Provider Configuration
 provider "aws" {
   region  = "ap-south-1"
-  profile = "terraformprofile"
+#  profile = "terraformprofile"
   
 }
 
@@ -28,6 +28,7 @@ module "ec2_instance" {
   instance_type = var.instance_type
   subnet_id     = var.subnet_id
   key_name      = var.key_name
+  availability_zones = var.availability_zones
 }
 
 # S3 Module
