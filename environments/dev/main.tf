@@ -7,18 +7,17 @@ terraform {
       version = "~> 6.0"
     }
   }
+
+  backend "s3" {
+    bucket = "my-terraform-state-bucket-2025sep"
+    key    = "terraform/dev.tfstate"
+    region = "ap-south-1"
+  }
 }
 
- 
-
-# AWS Provider Configuration
 provider "aws" {
-  region  = "ap-south-1"
-#  profile = "terraformprofile"
-  
+  region = "ap-south-1"
 }
-
-
 
 # EC2 Module
 module "ec2_instance" {
@@ -28,7 +27,7 @@ module "ec2_instance" {
   instance_type = var.instance_type
   subnet_id     = var.subnet_id
   key_name      = var.key_name
-  availability_zones = var.availability_zones
+  availability_zones = var.availability_zones   # pass the list to module
 }
 
 # S3 Module
@@ -42,6 +41,3 @@ module "iam_user" {
   source    = "../../modules/iam"
   user_name = var.iam_user_name
 }
-
-
-
