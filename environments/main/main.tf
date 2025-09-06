@@ -7,18 +7,21 @@ terraform {
       version = "~> 6.0"
     }
   }
-}
 
- 
+  backend "s3" {
+    bucket = "my-terraform-state-bucket-2025sep"
+    key    = "terraform/dev.tfstate"
+    region = "ap-south-1"
+  }
+}
 
 # AWS Provider Configuration
 provider "aws" {
-  region  = "ap-south-1"
+
+  region = "ap-south-1"
 #  profile = "terraformprofile"
   
 }
-
-
 
 # EC2 Module
 module "ec2_instance" {
@@ -41,6 +44,3 @@ module "iam_user" {
   source    = "../../modules/iam"
   user_name = var.iam_user_name
 }
-
-
-
