@@ -26,7 +26,7 @@ variable "key_name" {
 
 variable "availability_zones" {
   type    = list(string)
-  default = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
+#  default = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
 }
 
 variable "s3_bucket_name" {
